@@ -52,6 +52,7 @@ export const DropDownContainer = styled.ul`
     visibility: hidden;
     opacity: 0;
     transition: .3s all ease-in;
+    z-index: 1;
 `
 
 export const CustomLink = styled(Link)`

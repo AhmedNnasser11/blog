@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   NavDrawer,
   DrawerUl,
@@ -11,7 +11,7 @@ const Drawer = ({ openMenu }) => {
     <NavDrawer openMenu={openMenu}>
       <DrawerUl>
         {SidebarData.map((ele, index) => (
-          <SubMenuComponent ele={ele} index={index} />
+          <SubMenuComponent ele={ele} key={index} />
         ))}
       </DrawerUl>
     </NavDrawer>

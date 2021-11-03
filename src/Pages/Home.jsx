@@ -1,8 +1,10 @@
+import FadeSlider from "../Components/Slider/FadeSlider"
+
 const Home = () => {
     return (
-        <div>
-            Home
-        </div>
+        <header style={{height: '800px'}}>
+            <FadeSlider />
+        </header>
     )
 }
 

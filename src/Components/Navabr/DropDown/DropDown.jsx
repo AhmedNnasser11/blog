@@ -2,10 +2,10 @@ import React from 'react'
 import { CustomLink } from './DropDownStyle'
 import { Item } from './DropDownStyle'
 
-const DropDown = ({title, path, key}) => {
+const DropDown = ({title, navigate}) => {
     return (
-            <Item key={key}>
-                <CustomLink to={path}>
+            <Item>
+                <CustomLink to={navigate}>
                     {title}
                 </CustomLink>
             </Item>

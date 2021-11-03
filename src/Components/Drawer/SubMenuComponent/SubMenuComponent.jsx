@@ -1,12 +1,12 @@
 import { IconButton } from "@mui/material";
 import React, { useState } from "react";
-import { CustomLink, DrawerDrop, DrawerLi, LinkContainer } from "../DrawerStyle";
+import { CustomLink, DrawerDrop, DrawerLi, DrawerLiItem, LinkContainer } from "../DrawerStyle";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
-const SubMenuComponent = ({ele, index}) => {
+const SubMenuComponent = ({ele}) => {
     const [subMenu, setSubMenu] = useState(false)
   return (
-    <DrawerLi key={index}>
+    <DrawerLi>
     <LinkContainer>
       <CustomLink to={ele.path}>{ele.title}</CustomLink>
       {ele.subNav ? (
@@ -17,9 +17,9 @@ const SubMenuComponent = ({ele, index}) => {
     </LinkContainer>
     <DrawerDrop subMenu={subMenu}>
       {ele.subNav?.map((ele, index) => (
-        <DrawerLi key={index}>
+        <DrawerLiItem key={index}>
           <CustomLink to={ele.path}>{ele.title}</CustomLink>
-        </DrawerLi>
+        </DrawerLiItem>
       ))}
     </DrawerDrop>
   </DrawerLi>
