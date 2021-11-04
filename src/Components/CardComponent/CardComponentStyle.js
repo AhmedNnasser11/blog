@@ -13,8 +13,9 @@ export const Card = styled.div`
   flex-direction: column;
   justify-content: space-between;
   row-gap: 35px;
-  ${props => props.header ? (
-    ` margin-top: -154px;
+  ${(props) =>
+    props.header
+      ? ` margin-top: -154px;
       margin-left: 44%;
       z-index:1;
       @media(max-width: 1135px){
@@ -27,7 +28,7 @@ export const Card = styled.div`
         border-radius: 0px;
       }
       `
-  ): null}
+      : null}
   position: relative;
   padding-top: 50px;
   padding-bottom: 50px;
@@ -47,8 +48,8 @@ export const Title = styled.h3`
 export const Info = styled.div`
   display: flex;
   justify-content: space-between;
-  @media(max-width: 855px){
-      flex-direction: column;
+  @media (max-width: 855px) {
+    flex-direction: column;
   }
 `;
 
@@ -62,22 +63,22 @@ export const Contact = styled.div`
   display: flex;
   align-items: center;
   column-gap: 10px;
-  .icons{
+  .icons {
     display: flex;
     column-gap: 10px;
   }
 `;
 
 export const Name = styled.span`
-    text-transform: capitalize;
-    font-size: ${Style.h6};
-    line-height: 1.25;
-    transition: .3s all ease;
-    font-weight: 500;
-    &:hover{
-        color: ${Style.buttonColor} ;
-        transition: .3s all ease;
-    }
+  text-transform: capitalize;
+  font-size: ${Style.h6};
+  line-height: 1.25;
+  transition: 0.3s all ease;
+  font-weight: 500;
+  &:hover {
+    color: ${Style.buttonColor};
+    transition: 0.3s all ease;
+  }
 `;
 
 export const Date = styled.span`
@@ -88,30 +89,30 @@ export const Date = styled.span`
 export const CustomFacebook = styled(FaFacebookF)`
   font-size: 14px;
   cursor: pointer;
-  transition: .3s all ease;
+  transition: 0.3s all ease;
   &:hover {
     color: ${Style.buttonColor};
-    transition: .3s all ease;
+    transition: 0.3s all ease;
   }
 `;
 
 export const CustomTwiter = styled(BsTwitter)`
   font-size: 14px;
   cursor: pointer;
-  transition: .3s all ease;
+  transition: 0.3s all ease;
   &:hover {
     color: ${Style.buttonColor};
-    transition: .3s all ease;
+    transition: 0.3s all ease;
   }
 `;
 
 export const CustomLinkedin = styled(BsLinkedin)`
   font-size: 14px;
   cursor: pointer;
-  transition: .3s all ease;
+  transition: 0.3s all ease;
   &:hover {
     color: ${Style.buttonColor};
-    transition: .3s all ease;
+    transition: 0.3s all ease;
   }
 `;
 
@@ -119,10 +120,10 @@ export const CustomShare = styled(BsShareFill)`
   font-size: 14px;
   margin-right: 20px;
   cursor: pointer;
-  transition: .3s all ease;
+  transition: 0.3s all ease;
   &:hover {
     color: ${Style.buttonColor};
-    transition: .3s all ease;
+    transition: 0.3s all ease;
   }
 `;
 
@@ -136,12 +137,12 @@ export const CustomButton = styled(Button)`
   line-height: 26px !important;
   border-radius: 500px !important;
   border: 1px solid ${Style.buttonColor};
-  transition: .3s all ease !important;
+  transition: 0.3s all ease !important;
   &:hover {
     background-color: #fff !important;
     color: ${Style.buttonColor} !important;
     border: 1px solid ${Style.buttonColor};
-    transition: .3s all ease !important;
+    transition: 0.3s all ease !important;
   }
 `;
 

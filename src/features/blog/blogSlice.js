@@ -4,7 +4,8 @@ import axios from 'axios';
 const initialState = {
   user: [],
   blog: [],
-  slider: []
+  slider: [],
+  featured: []
 };
 
 export const getSlider = createAsyncThunk(
@@ -25,6 +26,15 @@ export const getUser = createAsyncThunk(
   }
 );
 
+export const getFeatured = createAsyncThunk(
+  "blog/getFeatured",
+  async () => {
+    return await axios
+      .get(`http://localhost:3004/blog/?_start=6&_end=8`)
+      .then((res) => res.data);
+  }
+);
+
 export const blogSlice = createSlice({
   name: 'blog',
   initialState,
@@ -38,11 +48,16 @@ export const blogSlice = createSlice({
     [getUser.fulfilled]: (state, {payload}) => {
       state.user = payload
     },
+    [getFeatured.fulfilled]: (state, {payload}) => {
+      state.featured = payload
+    },
   },
 });
 // in the slice file. For example: `useSelector((state: RootState) => state.counter.value)`
 export const selectSlider = (state) => state.blog.slider;
 export const selectUser = (state) => state.blog.user;
+export const selectFeatured = (state) => state.blog.featured;
+
 
 
 export default blogSlice.reducer;
