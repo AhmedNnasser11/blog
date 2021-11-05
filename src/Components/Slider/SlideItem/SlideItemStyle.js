@@ -8,7 +8,7 @@ export const ItemContainer = styled.div`
 
 export const Image = styled.img`
   width: 100%;
-  height: 70vh;
+  height: 400px;
   z-index: 0;
   object-fit: cover;
 `;

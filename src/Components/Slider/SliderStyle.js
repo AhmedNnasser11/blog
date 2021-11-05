@@ -10,7 +10,7 @@ export const SliderContainer = styled.div`
   background-color: ${Style.bg};
   padding-bottom: 20px;
   @media (max-width: 855px) {
-    height: 90%;
+    padding-bottom: 80px;
   }
 `;
 

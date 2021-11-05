@@ -37,7 +37,7 @@ const FeaturedPosts = () => {
         <ProductsCart>
           <Grid container spacing={2}>
             {featured.map(ele => (
-              <Grid item xs={12} md={6}>
+              <Grid item xs={12} md={6} key={ele.id}>
               <Card>
                 <LeftSection>
                   <Title>
@@ -47,9 +47,9 @@ const FeaturedPosts = () => {
                   </Title>
                   <Info>
                     <Detail>
-                      <Avatar src={user[0].avatar} />
+                      <Avatar src={user[0]?.avatar} />
                       <DetailContainer>
-                        <Name>{user[0].name}</Name>
+                        <Name>{user[0]?.name}</Name>
                         <Date>January 24, 2021</Date>
                       </DetailContainer>
                     </Detail>
