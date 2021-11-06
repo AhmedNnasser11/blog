@@ -1,15 +1,15 @@
-import styled from "styled-components";
-import { Container } from "@mui/material";
+import { Container } from "@mui/material"
+import styled from "styled-components"
 import { Style } from "../../GlobalStyle";
 
-export const InnovationAndTechContainer = styled.section`
-  width: 100%;
-  background-color: ${Style.bg};
+export const MostPopularContainer = styled.section`
+width: 100%;
+  background-color: #FFF;
   padding-top: 70px;
   padding-bottom: 70px;
-`;
+`
 
-export const CustomContainer = styled(Container)``;
+export const CustomContainer = styled(Container)``
 
 export const HeadTitle = styled.h3`
   color: ${Style.postTitle};

@@ -28,7 +28,6 @@ const CustomPrevArrow = (props) => {
 const FadeSlider = () => {
   const dispatch = useDispatch()
   const slider = useSelector(selectSlider);
-  console.log(slider)
   useEffect(() => {
     dispatch(getSlider())
   }, [dispatch])

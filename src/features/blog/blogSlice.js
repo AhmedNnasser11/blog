@@ -73,7 +73,7 @@ export const blogSlice = createSlice({
   },
   extraReducers: {
     [getSlider.fulfilled]: (state, {payload}) => {
-      state.slider = payload
+      state.slider = payload.reverse()
     },
     [getUser.fulfilled]: (state, {payload}) => {
       state.user = payload
