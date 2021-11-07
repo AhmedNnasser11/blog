@@ -2,7 +2,15 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const initialState = {
-  user: [],
+  user: [
+    {
+      "id": 1,
+      "name": "Leanne Graham",
+      "username": "Bret",
+      "email": "Sincere@april.biz",
+      "avatar": "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  }
+  ],
   blog: [],
   slider: [],
   featured: [],
@@ -16,16 +24,7 @@ export const getSlider = createAsyncThunk(
   "blog/getSlider",
   async () => {
     return await axios
-      .get(`http://localhost:3004/blog?&_limit=5`)
-      .then((res) => res.data);
-  }
-);
-
-export const getUser = createAsyncThunk(
-  "blog/getUser",
-  async () => {
-    return await axios
-      .get(`http://localhost:3004/user`)
+      .get(`https://my-json-server.typicode.com/AhmedNnasser11/blogData/blog?&_limit=5`)
       .then((res) => res.data);
   }
 );
@@ -34,7 +33,7 @@ export const getFeatured = createAsyncThunk(
   "blog/getFeatured",
   async () => {
     return await axios
-      .get(`http://localhost:3004/blog/?_start=6&_end=8`)
+      .get(`https://my-json-server.typicode.com/AhmedNnasser11/blogData/blog/?_start=6&_end=8`)
       .then((res) => res.data);
   }
 );
@@ -43,7 +42,7 @@ export const getAccessibility = createAsyncThunk(
   "blog/getAccessibility",
   async () => {
     return await axios
-      .get(`http://localhost:3004/blog?&_limit=6`)
+      .get(`https://my-json-server.typicode.com/AhmedNnasser11/blogData/blog?&_limit=6`)
       .then((res) => res.data);
   }
 )
@@ -52,7 +51,7 @@ export const getAndroidDev = createAsyncThunk(
   "blog/getAndroidDev",
   async () => {
     return await axios
-      .get(`http://localhost:3004/blog?&_limit=6`)
+      .get(`https://my-json-server.typicode.com/AhmedNnasser11/blogData/blog?&_limit=6`)
       .then((res) => res.data);
   }
 )
@@ -61,7 +60,7 @@ export const getGadgets = createAsyncThunk(
   "blog/getGadgets",
   async () => {
     return await axios
-      .get(`http://localhost:3004/blog?&_limit=6`)
+      .get(`https://my-json-server.typicode.com/AhmedNnasser11/blogData/blog?&_limit=6`)
       .then((res) => res.data);
   }
 )
@@ -79,9 +78,6 @@ export const blogSlice = createSlice({
     [getSlider.fulfilled]: (state, {payload}) => {
       state.slider = payload.reverse()
       state.status = "success"
-    },
-    [getUser.fulfilled]: (state, {payload}) => {
-      state.user = payload
     },
     [getFeatured.fulfilled]: (state, {payload}) => {
       state.featured = payload
