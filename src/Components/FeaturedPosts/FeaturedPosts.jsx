@@ -19,19 +19,25 @@ import {
 } from "./FeaturedPostsStyle";
 import {useDispatch, useSelector} from "react-redux"
 
-import {getFeatured, selectFeatured, selectUser} from "../../features/blog/blogSlice"
+import {getFeatured, selectFeatured, selectSliderStatus, selectUser} from "../../features/blog/blogSlice"
+import LoadingPage from "../../Pages/LoadingPage/LoadingPage"
 
 const FeaturedPosts = () => {
     const dispatch = useDispatch()
     const featured = useSelector(selectFeatured)
     const user = useSelector(selectUser)
+    const status = useSelector(selectSliderStatus);
 
 
     useEffect(() => {
         dispatch(getFeatured())
     }, [dispatch])
   return (
-    <FeaturedPostsContainer>
+    <>
+    {status === "loading" ? (
+      <LoadingPage />
+    ):(
+      <FeaturedPostsContainer>
       <CustomContainer maxWidth="xl">
         <HeadTitle>More Featured Posts.</HeadTitle>
         <ProductsCart>
@@ -65,6 +71,8 @@ const FeaturedPosts = () => {
         </ProductsCart>
       </CustomContainer>
     </FeaturedPostsContainer>
+    )}
+    </>
   );
 };
 

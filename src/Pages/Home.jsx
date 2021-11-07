@@ -5,7 +5,7 @@ import MostPopular from "../Components/MostPopular/MostPopular"
 
 const Home = () => {
     return (
-        <header style={{height: '4000px'}}>
+        <header>
             <FadeSlider />
             <FeaturedPosts />
             <InnovationAndTech />

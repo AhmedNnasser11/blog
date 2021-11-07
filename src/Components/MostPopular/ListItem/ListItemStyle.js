@@ -41,7 +41,7 @@ export const Item = styled.li`
     font-weight: 500;
     display: flex;
   }
-  &:hover ${Image}{
+    &:hover ${Image}{
     transform: scale(1);
     transition: .3s all ease;
   }
@@ -49,6 +49,7 @@ export const Item = styled.li`
     width: 100%;
     transition: .3s all ease;
   }
+ 
   @media (max-width: 755px) {
     padding-bottom: 20px;
   }

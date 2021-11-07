@@ -1,22 +1,35 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { getAccessibility, selectAccessibility } from '../../features/blog/blogSlice'
-import MultiSlider from '../MultiSlider/MultiSlider'
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  getAccessibility,
+  selectAccessibility,
+  selectSliderStatus,
+} from "../../features/blog/blogSlice";
+import MultiSlider from "../MultiSlider/MultiSlider";
+import LoadingPage from "../../Pages/LoadingPage/LoadingPage";
 
 const Accessibility = () => {
+  const dispatch = useDispatch();
+  const Accessibility = useSelector(selectAccessibility);
+  const status = useSelector(selectSliderStatus);
 
-    const dispatch = useDispatch()
-    const Accessibility = useSelector(selectAccessibility)
+  useEffect(() => {
+    if (Accessibility.length === 0) {
+      dispatch(getAccessibility());
+    } else {
+      return null;
+    }
+  }, [dispatch]);
 
-    useEffect(() => {
-        dispatch(getAccessibility())
-    }, [dispatch])
+  return (
+    <>
+      {status === "loading" ? (
+        <LoadingPage />
+      ) : (
+        <MultiSlider data={Accessibility} />
+      )}
+    </>
+  );
+};
 
-    return (
-        <>
-            <MultiSlider data={Accessibility} />
-        </>
-    )
-}
-
-export default Accessibility
+export default Accessibility;

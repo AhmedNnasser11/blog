@@ -8,7 +8,8 @@ const initialState = {
   featured: [],
   Accessibility: [],
   AndroidDev: [],
-  Gadgets:[]
+  Gadgets:[],
+  status: null
 };
 
 export const getSlider = createAsyncThunk(
@@ -72,8 +73,12 @@ export const blogSlice = createSlice({
   
   },
   extraReducers: {
+    [getSlider.pending]: (state, {payload}) => {
+      state.status = "loading"
+    },
     [getSlider.fulfilled]: (state, {payload}) => {
       state.slider = payload.reverse()
+      state.status = "success"
     },
     [getUser.fulfilled]: (state, {payload}) => {
       state.user = payload
@@ -81,8 +86,12 @@ export const blogSlice = createSlice({
     [getFeatured.fulfilled]: (state, {payload}) => {
       state.featured = payload
     },
+    [getAccessibility.pending]: (state, {payload}) => {
+      state.status = "loading"
+    },
     [getAccessibility.fulfilled]: (state, {payload}) => {
       state.Accessibility = payload
+      state.status = "success"
     },
     [getAndroidDev.fulfilled]: (state, {payload}) => {
       state.AndroidDev = payload.reverse()
@@ -93,6 +102,7 @@ export const blogSlice = createSlice({
   },
 });
 // in the slice file. For example: `useSelector((state: RootState) => state.counter.value)`
+export const selectSliderStatus = (state) => state.blog.status;
 export const selectSlider = (state) => state.blog.slider;
 export const selectUser = (state) => state.blog.user;
 export const selectFeatured = (state) => state.blog.featured;

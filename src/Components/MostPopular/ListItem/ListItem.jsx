@@ -21,6 +21,7 @@ import {
 } from "./ListItemStyle";
 
 const ListItem = ({title, image, user}) => {
+
   return (
       <>
     <Item>

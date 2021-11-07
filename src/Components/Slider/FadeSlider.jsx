@@ -5,7 +5,8 @@ import { CustomContainer, CustomSlider, SliderContainer } from "./SliderStyle";
 import SlideItem from "./SlideItem/SlideItem";
 import {ArrowForwardIos, ArrowBackIosNew} from "@mui/icons-material"
 import { useDispatch, useSelector } from "react-redux";
-import { getSlider, selectSlider } from "../../features/blog/blogSlice";
+import { getSlider, selectSlider, selectSliderStatus } from "../../features/blog/blogSlice";
+import LoadingPage from "../../Pages/LoadingPage/LoadingPage"
 
 const CustomNextArrow = (props) => {
   const { className, onClick } = props;
@@ -28,6 +29,8 @@ const CustomPrevArrow = (props) => {
 const FadeSlider = () => {
   const dispatch = useDispatch()
   const slider = useSelector(selectSlider);
+  const status = useSelector(selectSliderStatus);
+
   useEffect(() => {
     dispatch(getSlider())
   }, [dispatch])
@@ -44,7 +47,11 @@ const FadeSlider = () => {
   };
 
   return (
-    <SliderContainer>
+    <>
+    {status === "loading" ? (
+      <LoadingPage />
+    ):(
+      <SliderContainer>
       <CustomContainer maxWidth="xl">
       <CustomSlider {...settings}>
         {slider.map(ele => (
@@ -53,6 +60,9 @@ const FadeSlider = () => {
       </CustomSlider>
       </CustomContainer>
     </SliderContainer>
+    )}
+   
+    </>
   );
 };
 

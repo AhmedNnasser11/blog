@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -9,16 +9,30 @@ import Home from './Pages/Home';
 import ScrollToTop from "./Components/ScrollToTop/ScrollToTop"
 import {getUser} from "./features/blog/blogSlice"
 import { useDispatch } from 'react-redux';
+import Footer from "./Components/Footer/Footer.jsx"
+import LoadingPage from "./Pages/LoadingPage/LoadingPage"
 
 function App() {
 const dispatch = useDispatch()
+const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     dispatch(getUser())
   }, [dispatch])
 
+  useEffect(() => {
+    window.addEventListener("onload", setLoading(false));
+    return () => {
+      window.removeEventListener("onload", setLoading(true));
+    };
+  }, []);
+
   return (
-    <Router>
+    <>
+    {loading ? (
+      <LoadingPage />
+    ):(
+      <Router>
       <Navbar />
       <ScrollToTop>
       <Switch>
@@ -26,9 +40,12 @@ const dispatch = useDispatch()
             <Home />
           </Route>
         </Switch>
+        <Footer />
       </ScrollToTop>
-     
     </Router>
+    )}
+
+    </>
   );
 }
 

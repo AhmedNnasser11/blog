@@ -6,7 +6,6 @@ export const MostPopularContainer = styled.section`
 width: 100%;
   background-color: #FFF;
   padding-top: 70px;
-  padding-bottom: 70px;
 `
 
 export const CustomContainer = styled(Container)``
