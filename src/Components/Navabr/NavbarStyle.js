@@ -114,15 +114,20 @@ export const SearchContainer = styled.div`
   background-color: ${Style.bg};
   overflow: hidden;
   transition: .3s all ease;
+  @media (max-width: 500px){
+      width: 150px !important;
+  }
   ${props => props.focus ? (
     `border: 1px solid ${Style.buttonColor}`
-  ): `border: 1px solid ${Style.bg}`}`;
+  ): `border: 1px solid ${Style.bg}`}
+  `;
 export const CustomInput = styled.input`
     border: 0;
     outline: none;
     background-color: ${Style.bg};
     width: 100%;
     height: 100%;
+ 
 `;
 export const CustomCart = styled(ShoppingCartOutlined)`
   font-weight: 400 !important;
