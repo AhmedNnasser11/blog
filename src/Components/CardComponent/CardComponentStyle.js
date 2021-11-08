@@ -43,6 +43,9 @@ export const DetailContainer = styled.span`
 export const Title = styled.h3`
   color: ${Style.postTitle};
   font-size: ${Style.h3};
+  @media (max-width: 600px) {
+    font-size: ${Style.rh3};
+  }
 `;
 
 export const Info = styled.div`
@@ -154,6 +157,9 @@ export const CustomLink = styled(Link)`
   background-position: left bottom;
   background-repeat: no-repeat;
   transition: background-size 400ms;
+  @media (max-width: 600px) {
+    font-size: ${Style.rh3};
+  }
 
   &:hover {
     background-size: 100% 3px;

@@ -17,7 +17,6 @@ const Gadgets = () => {
   const Gadgets = useSelector(selectGadgets);
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
-  const status = useSelector(selectSliderStatus);
 
   useEffect(() => {
     if (Gadgets.length === 0) {
@@ -29,7 +28,7 @@ const Gadgets = () => {
 
   return (
     <>
-      {status === "loading" ? (
+      {Gadgets.length === 0 ? (
         <LoadingPage />
       ) : (
         <AccessibilityContainer>

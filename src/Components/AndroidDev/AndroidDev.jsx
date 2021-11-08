@@ -20,7 +20,7 @@ const AndroidDev = () => {
 
     return (
         <>
-        {status === "loading" ? (
+        {AndroidDev.length === 0 ? (
             <LoadingPage />
         ):(
             <MultiSlider data={AndroidDev} />

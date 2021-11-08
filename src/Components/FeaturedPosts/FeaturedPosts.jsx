@@ -34,7 +34,7 @@ const FeaturedPosts = () => {
     }, [dispatch])
   return (
     <>
-    {status === "loading" ? (
+    {featured.length === 0 ? (
       <LoadingPage />
     ):(
       <FeaturedPostsContainer>

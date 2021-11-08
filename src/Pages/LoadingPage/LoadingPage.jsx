@@ -1,9 +1,8 @@
-import CircularProgress from '@mui/material/CircularProgress';
-
+import "./LoadingPage.css"
 const LoadingPage = () => {
     return (
-        <div style={{width: '100vw', height: '90vh', display: 'flex', justifyContent: 'center' ,  alignItems: 'center', overFlow: 'hidden'}}>
-           <CircularProgress color="primary" size='90px' />
+        <div className="container">
+        <div className="lds-dual-ring"></div>
         </div>
     )
 }

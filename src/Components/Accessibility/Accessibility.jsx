@@ -11,7 +11,6 @@ import LoadingPage from "../../Pages/LoadingPage/LoadingPage";
 const Accessibility = () => {
   const dispatch = useDispatch();
   const Accessibility = useSelector(selectAccessibility);
-  const status = useSelector(selectSliderStatus);
 
   useEffect(() => {
     if (Accessibility.length === 0) {
@@ -23,7 +22,7 @@ const Accessibility = () => {
 
   return (
     <>
-      {status === "loading" ? (
+      {Accessibility.length === 0 ? (
         <LoadingPage />
       ) : (
         <MultiSlider data={Accessibility} />

@@ -16,4 +16,7 @@ export const HeadTitle = styled.h3`
   font-weight: 700;
   line-height: 1.23;
   margin-bottom: 37px;
+  @media (max-width: 600px) {
+    font-size: ${Style.rh2};
+  }
 `;

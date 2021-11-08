@@ -89,8 +89,14 @@ export const blogSlice = createSlice({
       state.Accessibility = payload
       state.status = "success"
     },
+    [getAndroidDev.pending]: (state, {payload}) => {
+      state.status = "loading"
+    },
     [getAndroidDev.fulfilled]: (state, {payload}) => {
       state.AndroidDev = payload.reverse()
+    },
+    [getGadgets.pending]: (state, {payload}) => {
+      state.status = "loading"
     },
     [getGadgets.fulfilled]: (state, {payload}) => {
       state.Gadgets = payload

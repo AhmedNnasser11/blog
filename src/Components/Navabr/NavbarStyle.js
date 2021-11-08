@@ -115,7 +115,7 @@ export const SearchContainer = styled.div`
   overflow: hidden;
   transition: .3s all ease;
   @media (max-width: 500px){
-      width: 150px !important;
+      width: 140px !important;
   }
   ${props => props.focus ? (
     `border: 1px solid ${Style.buttonColor}`

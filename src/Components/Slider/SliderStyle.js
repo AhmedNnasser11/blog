@@ -60,7 +60,6 @@ export const CustomSlider = styled(Slider)`
   .slick-next {
     right: 80% !important;
     @media (max-width: 530px) {
-      right: 70% !important;
-    }
+      right: 65% !important;    }
   }
 `;

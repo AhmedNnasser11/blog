@@ -29,7 +29,6 @@ const CustomPrevArrow = (props) => {
 const FadeSlider = () => {
   const dispatch = useDispatch()
   const slider = useSelector(selectSlider);
-  const status = useSelector(selectSliderStatus);
 
   useEffect(() => {
     dispatch(getSlider())
@@ -48,7 +47,7 @@ const FadeSlider = () => {
 
   return (
     <>
-    {status === "loading" ? (
+    {slider.length === 0 ? (
       <LoadingPage />
     ):(
       <SliderContainer>

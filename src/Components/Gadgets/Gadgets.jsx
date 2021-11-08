@@ -23,7 +23,7 @@ const Gadgets = () => {
 
   return (
     <>
-      {status === "loading" ? <LoadingPage /> : <MultiSlider data={Gadgets} />}
+      {Gadgets.length === 0 ? <LoadingPage /> : <MultiSlider data={Gadgets} />}
     </>
   );
 };

@@ -84,6 +84,9 @@ export const Category = styled.h5`
 export const Title = styled.h3`
   color: ${Style.postTitle};
   font-size: ${Style.h3};
+  @media (max-width: 600px) {
+    font-size: ${Style.rh3};
+  }
 `;
 
 export const BottomBox = styled.div`

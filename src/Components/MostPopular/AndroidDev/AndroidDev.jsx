@@ -22,7 +22,7 @@ const AndroidDev = () => {
 }, [dispatch])
     return (
         <>
-        {status === "loading" ? (
+        {AndroidDev.length === 0 ? (
             <LoadingPage />
         ):(
             <AccessibilityContainer>

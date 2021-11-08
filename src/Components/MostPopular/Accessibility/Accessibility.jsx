@@ -26,7 +26,7 @@ const Accessibility = () => {
 
     return (
         <>
-        {status === "loading" ? (
+        {Accessibility.length === 0 ? (
             <LoadingPage />
         ) : (
             <AccessibilityContainer>
